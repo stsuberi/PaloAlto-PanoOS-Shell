@@ -16,7 +16,7 @@ Document version: 1.0.0
 * [Downloading the Shell](#downloading-the-shell)
 * [Importing and Configuring the Shell](#importing-and-configuring-the-shell)
 * [Updating Python Dependencies for Shells](#updating-python-dependencies-for-shells)
-* [Typical Workflow and Scenarios](#typical-workflow-and-scenarios)
+* [Typical Workflows](#typical-workflows)
 * [References](#references)
 * [Release Notes](#release-notes)
 
@@ -127,7 +127,7 @@ For more information, see [Configuring CloudShell to Execute Python Commands in 
 Before PyPi Server was introduced as CloudShell’s python package management mechanism, the `PythonOfflineRepositoryPath` key was used to set the default offline package repository on the Quali Server machine, and could be used on specific Execution Server machines to set a different folder. 
 
 **To set the offline python repository:**
-1. Download the **[Shell Offline Requirements .zip File Name]** file, see [Downloading the Shell](#downloading-the-shell).
+1. Download the *palo-alto-offline-dependencies.zip* file, see [Downloading the Shell](#downloading-the-shell).
 
 2. Unzip it to a local repository. Make sure the execution server has access to this folder. 
 
@@ -152,13 +152,13 @@ You can also modify existing resources, see [Managing Resources in the Inventory
   1. In the CloudShell Portal, in the **Inventory** dashboard, click **Add New**. 
      ![](https://github.com/stsuberi/SaraTest/blob/master/create_a_resource_device.png)
      
-  2. From the list, select **[Shell Name]**.
+  2. From the list, select **Palo Alto Firewall Shell**.
   
-  3. Enter the **Name** and **IP address** of the **[Device Name]** (if applicable).
+  3. Enter the **Name** and **IP address** of the **Palo Alto Firewall**.
   
   4. Click **Create**.
   
-  5. In the **Resource** dialog box, enter the device's settings, see [Device Name Attributes](*device-name-attributes).
+  5. In the **Resource** dialog box, enter the device's settings, see [Palo Alto Firewall Attributes](*palo-alto-firewall-attributes).
   
   6. Click **Continue**.
 
@@ -181,10 +181,9 @@ In online mode, the execution server automatically downloads and extracts the ap
 **To update online Python dependencies:**
 * If there is a live instance of the shell's driver or script, restart the execution server, as explained above. If an instance does not exist, the execution server will download the Python dependencies the next time a command of the driver or script runs.
 
-# Typical Workflow and Scenarios 
-(edit as necessary depending on the shell)
+# Typical Workflows 
 
-**Scenario 1 - _Save configuration_** 
+**Workflow 1 - _Save configuration_** 
 1. In CloudShell Portal, add the device resource to an active sandbox.
 
 2. Run the **Save** command on the device with the following inputs:
@@ -193,7 +192,7 @@ In online mode, the execution server automatically downloads and extracts the ap
 
 The configuration is saved to a file named *<ResourceName><startup/running-config>-<timestamp>*, which will reside in the folder path you entered.    
 
-**Scenario 2 - _Restore Configuration_**
+**Workflow 2 - _Restore Configuration_**
 1. In CloudShell Portal, reserve the device resource.
 
 2. Run the **Restore** resource command.
@@ -203,7 +202,7 @@ The configuration is saved to a file named *<ResourceName><startup/running-confi
     * **Restore Method** (optional): **Append** or **Override**. If you do not enter any value in this field, the **Append** method will be used. 
     * **Configuration Type** (mandatory): **Startup** or **Running**. 
 	
-**Scenario 3 - _Load firmware_**
+**Workflow 3 - _Load firmware_**
 1. In CloudShell Portal, reserve the device resource.
 
 2. Run the **Load Firmware** resource command.
@@ -222,10 +221,5 @@ To connect with Quali users and experts from around the world, ask questions and
 
 # Release Notes 
 
-### What's New
-
-* 
-
 ### Known Issues
-* PaloAlto PanOS supports the following **SNMP v3** encryption configuration only: authentication protocol - **SHA** and privacy protocol - **AES-128**
-* 
+* PaloAlto PanOS supports the following **SNMP v3** encryption configuration only: authentication protocol - **SHA** and privacy protocol - **AES-128**.
